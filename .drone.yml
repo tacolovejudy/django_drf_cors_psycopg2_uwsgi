@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: django0530
+
+steps:
+  - name: docker hub push
+    image: plugins/docker
+    settings:
+      registry: registry.hub.docker.com
+      repo: registry.hub.docker.com/tacolovejudy/django_drf_cors_psycopg2_uwsgi
+      auto_tag: true
+      username: tacolovejudy
+      password:
+        from_secret: docker_password
